@@ -9,3 +9,6 @@ class Box:
 
     def __str__(self):
         return(f"{self.name}: {self.weight}lbs | ${self.value}")
+
+    def print(self):
+        print(self)
