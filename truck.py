@@ -14,4 +14,14 @@ class Truck:
         self.value = 0
         self.boxes = {} #empty dictionary to start
 
-    def add_box(self, Box):
+    def add_box(self, box):
+        if self.weight + box.weight <= self.capacity:
+            if box in self.boxes:
+                self.boxes[box] += 1
+            else:
+                self.boxes.add(box)
+
+            self.weight += box.weight
+            self.value += box.value
+        else:
+            print(f"Box too big to fit.  Weight: {self.weight} Capacity: {self.capacity}\n{box}")
