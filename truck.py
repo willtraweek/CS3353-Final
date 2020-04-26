@@ -27,7 +27,7 @@ class Truck:
             self.weight += box.weight
             self.value += box.value
         else:
-            print(f"Box too big to fit.  Weight: {self.weight} Capacity: {self.capacity}\n{box}")
+            raise BoxAdditionError("Box too big to fit", self.weight, self.capacity, box)
 
     def remove_box(self, box):
         """removes a box from the truck"""
