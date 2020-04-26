@@ -1,3 +1,5 @@
+from exceptions import *
+
 class Truck:
     """Truck that we'll be filling with Boxes
 
@@ -25,3 +27,9 @@ class Truck:
             self.value += box.value
         else:
             print(f"Box too big to fit.  Weight: {self.weight} Capacity: {self.capacity}\n{box}")
+
+    def remove_box(self, box):
+        if box not in self.boxes:
+            raise BoxRemovalError("Box not in Truck")
+        elif self.boxes[box] == 0:
+            raise BoxRemovalError("No boxes of this type left in truck")
