@@ -22,7 +22,7 @@ class Truck:
             if box in self.boxes:
                 self.boxes[box] += 1
             else:
-                self.boxes.add(box)
+                self.boxes[box] = 1
 
             self.weight += box.weight
             self.value += box.value
