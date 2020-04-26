@@ -28,7 +28,7 @@ class Truck:
                 self.boxes[box] = 1
 
             self.weight += box.weight
-            self.value += box.value
+            self.value += box.price
         else:
             raise BoxAdditionError("Box too big to fit", self.weight, self.capacity, box)
 
@@ -40,7 +40,7 @@ class Truck:
             raise BoxRemovalError("No boxes of this type left in truck", box)
 
         self.weight -= box.weight
-        self.value -= box.value
+        self.value -= box.price
         self.boxes[box] -= 1
 
         if self.boxes[box] == 0:
