@@ -33,3 +33,7 @@ class Truck:
             raise BoxRemovalError("Box not in Truck")
         elif self.boxes[box] == 0:
             raise BoxRemovalError("No boxes of this type left in truck")
+
+        self.weight -= box.weight
+        self.value -= box.value
+        self.boxes[box] -= 1
