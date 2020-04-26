@@ -1,5 +1,6 @@
 from exceptions import *
 
+
 class Truck:
     """Truck that we'll be filling with Boxes
 
@@ -14,7 +15,7 @@ class Truck:
         self.capacity = capacity
         self.weight = 0
         self.value = 0
-        self.boxes = {} #empty dictionary to start
+        self.boxes = {}  # empty dictionary to start
 
     def add_box(self, box):
         if self.weight + box.weight <= self.capacity:
@@ -29,11 +30,15 @@ class Truck:
             print(f"Box too big to fit.  Weight: {self.weight} Capacity: {self.capacity}\n{box}")
 
     def remove_box(self, box):
+        """removes a box from the truck"""
         if box not in self.boxes:
-            raise BoxRemovalError("Box not in Truck")
+            raise BoxRemovalError("Box not in Truck", box)
         elif self.boxes[box] == 0:
-            raise BoxRemovalError("No boxes of this type left in truck")
+            raise BoxRemovalError("No boxes of this type left in truck", box)
 
         self.weight -= box.weight
         self.value -= box.value
         self.boxes[box] -= 1
+
+        if self.boxes[box] == 0:
+            self.boxes.pop(box)
