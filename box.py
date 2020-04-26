@@ -8,7 +8,10 @@ class Box:
         self.value = value
 
     def __str__(self):
-        return(f"{self.name}: {self.weight}lbs | ${self.value}")
+        """Formats the box in a readable format:
+        name: weight | value
+        """
+        return f"{self.name}: {self.weight} lbs | {'${:,.2f}'.format(self.value)}"
 
     def print(self):
         print(self)
