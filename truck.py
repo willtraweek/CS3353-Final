@@ -1,4 +1,5 @@
 from exceptions import *
+import json
 
 
 class Truck:
@@ -19,6 +20,19 @@ class Truck:
 
     def __str__(self):
         return f"{self.weight} lbs / {self.capacity} lbs"
+
+    def to_json(self):
+        output = {}
+
+        for key, value in self.boxes.items():
+            temp = {}
+            temp["weight"] = key.weight
+            temp["price"] = key.price
+            temp["quantity"] = value
+
+            output[key.name] = temp
+
+        return json.dumps(output, indent=4)
 
     def add_box(self, box):
         if self.weight + box.weight <= self.capacity:
