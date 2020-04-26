@@ -17,6 +17,9 @@ class Truck:
         self.value = 0
         self.boxes = {}  # empty dictionary to start
 
+    def __str__(self):
+        return f"{self.weight} lbs / {self.capacity} lbs"
+
     def add_box(self, box):
         if self.weight + box.weight <= self.capacity:
             if box in self.boxes:
