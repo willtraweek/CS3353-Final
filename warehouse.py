@@ -16,10 +16,15 @@ class Warehouse:
     """
 
     def __init__(self, capacity):
-        self.trucks = []
+        self.trucks = []  # THIS NEEDS TO BE SORTED EVERY TIME ITS UPDATED
         self.boxes = {}
         self.capacity = capacity
         self.value = 0
+
+    # TODO: add_truck
+    # make sure to force sorting every time the list is updated
+
+    # TODO:remove_truck
 
     def add_box(self, box):
         """add the passed box to the warehouse"""
