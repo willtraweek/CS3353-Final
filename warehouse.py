@@ -15,7 +15,7 @@ class warehouse:
     """
 
     def __init__(self, capacity):
-        self.trucks = {}
+        self.trucks = []
         self.boxes = {}
         self.capacity = capacity
         self.value = 0
