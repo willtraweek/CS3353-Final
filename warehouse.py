@@ -1,6 +1,8 @@
 #  Copyright (c) 2020, Will Traweek, All Rights Reserved.
 
 from exceptions import *
+from truck import Truck
+from sortedcontainers import SortedList
 
 
 class Warehouse:
@@ -16,7 +18,7 @@ class Warehouse:
     """
 
     def __init__(self, capacity):
-        self.trucks = []  # THIS NEEDS TO BE SORTED EVERY TIME ITS UPDATED
+        self.trucks = SortedList()
         self.boxes = {}
         self.capacity = capacity
         self.value = 0
