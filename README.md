@@ -1,6 +1,6 @@
 # CS 3353 Algorithms Final Project
 
-![Python application](https://github.com/willtraweek/CS3353-Final/workflows/Python%20application/badge.svg)
+![Main Executable](https://github.com/willtraweek/KnapsackAnalysis/workflows/Main%20Executable/badge.svg)
 
 We had to choose an algorithm to study and write a program to examine a trivial and non-trivial solution to the problem.  I chose the Knapsack problem, as I was interested in its uses for stock portfolio creation and awed by how quickly the difficulty scales.
 
