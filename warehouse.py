@@ -11,3 +11,9 @@ class warehouse:
         capacity: total capacity of all the trucks available
         value: total value of all of the boxes and trucks here
     """
+
+    def __init__(self, capacity):
+        self.trucks = {}
+        self.boxes = {}
+        self.capacity = capacity
+        self.value = 0
