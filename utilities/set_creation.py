@@ -13,9 +13,14 @@ def create_test_set(numBoxes=10, maxWeight=50, maxPrice=100, test_num=0):
         numBoxes: the number of boxes to generate
         maxWeight: weight will be randomly generated between [0,maxWeight)
         maxPrice: price will be randomly generated between [0,maxPrice)
+        test_num: a number that you can append to the test
+            this is useful if you want to create multiple tests
     """
 
     input_file = open("./NAPCS.txt", "r").readlines()
+    if test_num != 0:
+        output_file = open(f"./examples/available_boxes_{test_num}.csv", "w+")
+    else:
         output_file = open(f"./examples/available_boxes.csv", "w+")
 
     output_file.write("name,weight,price\n")
