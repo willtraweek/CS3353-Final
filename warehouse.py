@@ -2,7 +2,8 @@
 
 from exceptions import *
 
-class warehouse:
+
+class Warehouse:
     """A warehouse stores boxes for shipping.  It can read in manifests and export them.  It also has a list of
     trucks assigned to it.  The largest part of the warehouse's job, though, is preparing said trucks for shipping.
     This is where the Knapsack algorithm comes into play.
