@@ -23,10 +23,11 @@ class Warehouse:
         self.capacity = capacity
         self.value = 0
 
-    # TODO: add_truck
-    # make sure to force sorting every time the list is updated
+    def add_truck(self, capacity):
+        """Creates a new truck and adds it to the list"""
+        self.trucks.add(Truck(capacity))
+        self.capacity += capacity
 
-    # TODO:remove_truck
 
     def add_box(self, box):
         """add the passed box to the warehouse"""
