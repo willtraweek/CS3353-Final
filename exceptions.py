@@ -14,6 +14,7 @@ class BoxRemovalError(Error):
         print(message)
         print(box)
 
+
 class BoxAdditionError(Error):
     """Error that occurs when a truck cannot add a box
 
