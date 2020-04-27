@@ -13,15 +13,18 @@ class Truck:
     """
 
     def __init__(self, capacity):
+        """initialize the truck"""
         self.capacity = capacity
         self.weight = 0
         self.value = 0
         self.boxes = {}  # empty dictionary to start
 
     def __str__(self):
+        """returns a string showing how full the truck is"""
         return f"{self.weight} lbs / {self.capacity} lbs"
 
     def to_json(self):
+        """returns the items in self.boxes in json"""
         output = {}
 
         for key, value in self.boxes.items():
@@ -35,6 +38,7 @@ class Truck:
         return json.dumps(output, indent=4)
 
     def add_box(self, box):
+        """add the passed box to the truck"""
         if self.weight + box.weight <= self.capacity:
             if box in self.boxes:
                 self.boxes[box] += 1
@@ -44,10 +48,11 @@ class Truck:
             self.weight += box.weight
             self.value += box.price
         else:
-            raise BoxAdditionError("Box too big to fit", self.weight, self.capacity, box)
+            # if adding this box would overfill the truck
+            raise BoxAdditionError("Box too heavy to fit", self.weight, self.capacity, box)
 
     def remove_box(self, box):
-        """removes a box from the truck"""
+        """removes the passed box from the truck"""
         if box not in self.boxes:
             raise BoxRemovalError("Box not in Truck", box)
         elif self.boxes[box] == 0:
@@ -57,5 +62,6 @@ class Truck:
         self.value -= box.price
         self.boxes[box] -= 1
 
+        # if the removed item was the final one of its type, remove it
         if self.boxes[box] == 0:
             self.boxes.pop(box)
