@@ -24,6 +24,13 @@ class Warehouse:
         self.capacity = 0
         self.value = 0
 
+    def __init__(self, input_file_path):
+        self.trucks = SortedList()
+        self.boxes = {}
+        self.capacity = 0
+        self.value = 0
+        self.import_boxes(input_file_path)
+
     def add_truck(self, capacity):
         """Creates a new truck and adds it to the list"""
         self.trucks.add(Truck(capacity))
