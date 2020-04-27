@@ -28,17 +28,12 @@ class Warehouse:
 
     def add_box(self, box):
         """add the passed box to the warehouse"""
-        if self.weight + box.weight <= self.capacity:
-            if box in self.boxes:
-                self.boxes[box] += 1
-            else:
-                self.boxes[box] = 1
-
-            self.weight += box.weight
-            self.value += box.price
+        if box in self.boxes:
+            self.boxes[box] += 1
         else:
-            # if adding this box would overfill the truck
-            raise BoxAdditionError("Box too heavy to fit", self.weight, self.capacity, box)
+            self.boxes[box] = 1
+
+        self.value += box.price
 
     def remove_box(self, box):
         """removes the passed box from the warehouse"""
