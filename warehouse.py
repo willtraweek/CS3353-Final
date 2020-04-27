@@ -2,6 +2,7 @@
 
 from exceptions import *
 from truck import Truck
+from box import Box
 from sortedcontainers import SortedList
 
 
@@ -17,10 +18,10 @@ class Warehouse:
         value: total value of all of the boxes and trucks here
     """
 
-    def __init__(self, capacity):
+    def __init__(self):
         self.trucks = SortedList()
         self.boxes = {}
-        self.capacity = capacity
+        self.capacity = 0
         self.value = 0
 
     def add_truck(self, capacity):
@@ -45,7 +46,6 @@ class Warehouse:
         elif self.boxes[box] == 0:
             raise BoxRemovalError("No boxes of this type left in warehouse", box)
 
-        self.weight -= box.weight
         self.value -= box.price
         self.boxes[box] -= 1
 
