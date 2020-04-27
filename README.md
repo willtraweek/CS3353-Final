@@ -1,5 +1,7 @@
 # CS 3353 Algorithms Final Project
 
+![Python application](https://github.com/willtraweek/CS3353-Final/workflows/Python%20application/badge.svg)
+
 We had to choose an algorithm to study and write a program to examine a trivial and non-trivial solution to the problem.  I chose the Knapsack problem, as I was interested in its uses for stock portfolio creation and awed by how quickly the difficulty scales.
 
 Rather than just create blank test data to run this on in a raw test of speed, I decided to make it a little more fun with the real world application of a truck that needs to fill itself with boxes of assorted goods, weights, and prices.  The truck clearly wants to take the most value it can with it, and thus requires a result from a knapsack-like problem.
