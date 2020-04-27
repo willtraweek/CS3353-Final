@@ -9,6 +9,9 @@ def create_test_set(numBoxes=10, maxWeight=50, maxPrice=100, test_num=0):
     """creates a test set based off of the NAPCS list
     randomizes prices and weights
 
+    quantity is handled, but not hardcoded. If multiple boxes with the same good are generated, it will pull the same
+    weight and price as the one that was generated earlier
+
     Attributes:
         numBoxes: the number of boxes to generate
         maxWeight: weight will be randomly generated between [0,maxWeight)
