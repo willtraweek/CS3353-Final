@@ -42,6 +42,9 @@ class Truck:
 
         return json.dumps(self.to_dict(), indent=4)
 
+    def leftover_space(self):
+        return self.capacity - self.weight
+
     def add_box(self, box):
         """add the passed box to the truck"""
         if self.weight + box.weight <= self.capacity:
