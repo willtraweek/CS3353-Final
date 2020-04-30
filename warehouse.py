@@ -16,7 +16,7 @@ class Warehouse:
         trucks: A set of trucks available for the warehouse to use
         boxes: A dictionary containing all of the possible boxes and their quantities
         capacity: total capacity of all the trucks available
-        value: total value of all of the boxes and trucks here
+        value: total value of all of the boxes in the warehouse -- does not count the value inside the trucks
     """
 
     def __init__(self):
@@ -93,7 +93,6 @@ class Warehouse:
         """Adds a new truck to the list of trucks"""
         self.trucks.add(truck)
         self.capacity += truck.capacity
-        self.value += truck.value
 
     def add_box(self, box):
         """add the passed box to the warehouse"""
