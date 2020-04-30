@@ -27,3 +27,14 @@ class BoxAdditionError(Error):
     def __init__(self, message, weight, capacity, box):
         print(message)
         print(f"Weight: {weight} Capacity: {capacity}\n{box}")
+
+
+class IncompatibleBoxError(Error):
+    """Error that occurs when there are no compatible boxes found
+
+    Attributes:
+        message: explanation of the error
+    """
+
+    def __init__(self, message):
+        print(message)
