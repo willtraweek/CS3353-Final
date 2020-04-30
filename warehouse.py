@@ -39,7 +39,7 @@ class Warehouse:
         for line in input_file.readlines():
             name, weight, price = line.split(",")
 
-            #prevents the first line from being read in
+            # prevents the first line from being read in
             if name == "name":
                 continue
 
@@ -59,11 +59,12 @@ class Warehouse:
         }
         output["Warehouse"] = warehouse
 
-        #list all boxes currently in trucks and the capacity of those trucks
+        # list all boxes currently in trucks and the capacity of those trucks
         for i in range(len(self.trucks)):
             truck = {}
 
             truck["value"] = self.trucks[i].value
+            truck["weight"] = self.trucks[i].weight
             truck["capacity"] = self.trucks[i].capacity
             truck["boxes"] = self.trucks[i].to_dict()
 
@@ -71,7 +72,7 @@ class Warehouse:
 
         output["Truck Fleet"] = trucks
 
-        #List all boxes still in floor storage
+        # List all boxes still in floor storage
         for key, value in self.boxes.items():
             temp = {}
             temp["weight"] = key.weight
