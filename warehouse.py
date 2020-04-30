@@ -116,3 +116,15 @@ class Warehouse:
         # if the removed item was the final one of its type, remove it
         if self.boxes[box] == 0:
             self.boxes.pop(box)
+
+    def load_box(self, box, truck):
+        """loads boxes from the warehouse into the truck"""
+        try:
+            self.remove_box(box)
+            truck.add_box(box)
+        except BoxAdditionError:
+            # sometimes it will be unable to add the box to the truck. Box needs to go back to the warehouse.
+            self.add_box(box)
+        except BoxRemovalError:
+            # if the box isn't in the warehouse, then return
+            return
