@@ -4,6 +4,7 @@ from exceptions import *
 from truck import Truck
 from box import Box
 from sortedcontainers import SortedList
+import json
 
 
 class Warehouse:
@@ -43,6 +44,45 @@ class Warehouse:
                 continue
 
             self.add_box(Box(name, int(weight), int(price)))
+
+    def to_json(self):
+        """returns the items in the trucks and self.boxes in json"""
+        output = {}
+        trucks = {}
+        boxes = {}
+
+        warehouse = {
+            "value": self.value,
+            "total truck capacity": self.capacity,
+            "trucks in fleet": len(self.trucks),
+            "boxes in storage": len(self.boxes)
+        }
+        output["Warehouse"] = warehouse
+
+        #list all boxes currently in trucks and the capacity of those trucks
+        for i in range(len(self.trucks)):
+            truck = {}
+
+            truck["value"] = self.trucks[i].value
+            truck["capacity"] = self.trucks[i].capacity
+            truck["boxes"] = self.trucks[i].to_dict()
+
+            trucks[f"Truck {i}"] = truck
+
+        output["Truck Fleet"] = trucks
+
+        #List all boxes still in floor storage
+        for key, value in self.boxes.items():
+            temp = {}
+            temp["weight"] = key.weight
+            temp["price"] = key.price
+            temp["quantity"] = value
+
+            boxes[key.name] = temp
+
+        output["Boxes"] = boxes
+
+        return json.dumps(output, indent=4)
 
     def add_truck(self, capacity):
         """Creates a new truck and adds it to the list"""
