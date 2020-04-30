@@ -128,3 +128,12 @@ class Warehouse:
         except BoxRemovalError:
             # if the box isn't in the warehouse, then return
             return
+
+    def unload_box(self, box, truck):
+        """unloads boxes from the truck and loads them into the warehouse"""
+        try:
+            truck.remove_box(box)
+            self.add_box(box)
+        except BoxRemovalError:
+            # if the box isn't in the truck, then return
+            return
