@@ -89,6 +89,11 @@ class Warehouse:
         self.trucks.add(Truck(capacity))
         self.capacity += capacity
 
+    def add_truck(self, truck):
+        """Adds a new truck to the list of trucks"""
+        self.trucks.add(truck)
+        self.capacity += truck.capacity
+        self.value += truck.value
 
     def add_box(self, box):
         """add the passed box to the warehouse"""
