@@ -23,8 +23,8 @@ class Truck:
         """returns a string showing how full the truck is"""
         return f"{self.weight} lbs / {self.capacity} lbs"
 
-    def to_json(self):
-        """returns the items in self.boxes in json"""
+    def to_dict(self):
+        """returns the items in dictionary format.  helpful for warehouse.to_json"""
         output = {}
 
         for key, value in self.boxes.items():
@@ -35,7 +35,12 @@ class Truck:
 
             output[key.name] = temp
 
-        return json.dumps(output, indent=4)
+        return output
+
+    def to_json(self):
+        """returns the items in self.boxes in json"""
+
+        return json.dumps(self.to_dict(), indent=4)
 
     def add_box(self, box):
         """add the passed box to the truck"""
