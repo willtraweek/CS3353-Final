@@ -138,3 +138,10 @@ class Warehouse:
         except BoxRemovalError:
             # if the box isn't in the truck, then return
             return
+
+    def num_boxes(self):
+        """Iterates through the quantities of boxes and returns the full count of boxes in """
+        output = 0
+        for value in self.boxes:
+            output += value
+        return output
