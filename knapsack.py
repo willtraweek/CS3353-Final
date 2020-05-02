@@ -6,7 +6,22 @@ from exceptions import *
 import sys
 
 
-def greedy_algorithm(warehouse, truck):
+def dynamic_programming_solution(warehouse, truck):
+    """This solution finds out the correct answer, but takes a long time to do so.  The Knapsack problem is NP Hard,
+    and this solution finds every possible answer for every capacity smaller than the capacity of the truck.
+
+    Attributes:
+        warehouse: This is the location of all of the stored boxes that need to be loaded
+        truck: The truck that the algorithm is attempting to fill
+    """
+    solution = []
+
+    for i in range(warehouse.num_boxes()):
+        for j in range(truck.capacity):
+            return
+
+
+def greedy_solution(warehouse, truck):
     """This is the trivial implementation.  It finds the most expensive item that will still fit in the truck and loads
     it into the truck.
 
