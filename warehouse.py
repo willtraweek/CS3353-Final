@@ -142,6 +142,6 @@ class Warehouse:
     def num_boxes(self):
         """Iterates through the quantities of boxes and returns the full count of boxes in """
         output = 0
-        for value in self.boxes:
+        for value in self.boxes.values():
             output += value
         return output
