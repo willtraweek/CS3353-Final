@@ -11,6 +11,10 @@ def dynamic_programming_solution(warehouse, truck):
     """This solution finds out the correct answer, but takes a long time to do so.  The Knapsack problem is NP Hard,
     and this solution finds every possible answer for every capacity smaller than the capacity of the truck.
 
+    We use trucks as items inside of the 2d array, because they were built to manage boxes, so they serve as an
+    efficient way of managing them here.  Furthermore, we can just go ahead and copy the trucks instead of having to
+    iterate back through the boxes
+
     Attributes:
         warehouse: This is the location of all of the stored boxes that need to be loaded
         truck: The truck that the algorithm is attempting to fill
