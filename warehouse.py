@@ -145,3 +145,11 @@ class Warehouse:
         for value in self.boxes.values():
             output += value
         return output
+
+    def to_list(self):
+        """converts the dictionary of boxes to a list for easier interfacing with the dynamic programming solution"""
+        output = []
+        for key, value in self.boxes.items():
+            for i in range(value):
+                output.append(key)
+        return output
