@@ -4,6 +4,7 @@ from box import Box
 from truck import Truck
 from exceptions import *
 import sys
+import numpy as np
 
 
 def dynamic_programming_solution(warehouse, truck):
