@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    # for i in range(1000):
-    #    set_creation.create_test_set(numBoxes=(i+1)*10, maxWeight=100, maxPrice=500, test_num=i+1)
+    for i in range(10):
+        set_creation.create_test_set(numBoxes=(i + 1) * 10, maxWeight=100, maxPrice=500, test_num=i + 1)
 
     algorithms_list = [knapsack.dynamic_programming_solution,
                        knapsack.greedy_solution]
