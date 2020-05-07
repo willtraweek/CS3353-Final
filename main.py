@@ -18,7 +18,7 @@ def main():
     # it took me hours to do a full run on my computer, so I modified the code below to do a shortened version as a
     # proof of concept on github.  If you want to run it with the same settings that I did, you can run it with
     # 0 and 150 as the two numbers in the function below
-    evaluate_algorithms(algorithms_list, algorithm_names, 0, 150)
+    evaluate_algorithms(algorithms_list, algorithm_names, 0, 10)
 
 
 if __name__ == "__main__":
