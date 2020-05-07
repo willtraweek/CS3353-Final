@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    for i in range(10):
+    for i in range(50):
         set_creation.create_test_set(numBoxes=(i + 1) * 10, maxWeight=100, maxPrice=500, test_num=i + 1)
 
     algorithms_list = [knapsack.dynamic_programming_solution,
@@ -18,7 +18,7 @@ def main():
     # it took me hours to do a full run on my computer, so I modified the code below to do a shortened version as a
     # proof of concept on github.  If you want to run it with the same settings that I did, you can run it with
     # 0 and 150 as the two numbers in the function below
-    evaluate_algorithms(algorithms_list, algorithm_names, 0, 10)
+    evaluate_algorithms(algorithms_list, algorithm_names, 0, 50)
 
 
 def evaluate_algorithms(algorithm_list, algorithm_names, x_min, x_max):
