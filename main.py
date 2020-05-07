@@ -54,7 +54,7 @@ def setup_graph(algorithm, file_num):
             input file
     """
     start = time.process_time()
-    warehouse = Warehouse(f"./examples/available_boxes_{file_num}.csv")
+    warehouse = Warehouse(f"./available_boxes_{file_num}.csv")
     original_value = warehouse.value
     trucks = []
     for i in range(file_num):

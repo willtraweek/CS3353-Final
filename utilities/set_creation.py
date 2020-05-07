@@ -22,9 +22,9 @@ def create_test_set(numBoxes=10, maxWeight=50, maxPrice=100, test_num=0):
 
     input_file = open("./NAPCS.txt", "r").readlines()
     if test_num != 0:
-        output_file = open(f"./examples/available_boxes_{test_num}.csv", "w+")
+        output_file = open(f"./available_boxes_{test_num}.csv", "w+")
     else:
-        output_file = open(f"./examples/available_boxes.csv", "w+")
+        output_file = open(f"./available_boxes.csv", "w+")
 
     output_file.write("name,weight,price\n")
 
