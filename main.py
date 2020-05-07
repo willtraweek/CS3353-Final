@@ -91,7 +91,7 @@ def graph_algorithms(x, names, *args, **kwargs):
         plt.title(labels[i])
 
         plt.savefig(f"./graphs/{labels[i]}")
-        plt.show()
+        plt.close()
 
 
 def save_to_csv(x, names, *args, **kwargs):
