@@ -23,6 +23,16 @@ class Truck:
         """returns a string showing how full the truck is"""
         return f"{self.weight} lbs / {self.capacity} lbs"
 
+    def __lt__(self, other):
+        if self.capacity < other.capacity:
+            return True
+        elif self.weight < other.weight:
+            return True
+        elif self.value < other.value:
+            return True
+        else:
+            return False
+
     def to_dict(self):
         """returns the items in dictionary format.  helpful for warehouse.to_json"""
         output = {}

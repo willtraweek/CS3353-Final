@@ -23,6 +23,8 @@ def dynamic_programming_solution(warehouse, truck):
     # optimal solution for the items above it and the capacity that it currently represents.  By the time the bottom
     # of the table has been reached, the optimal solutions for (0, capacity] will have been found.
 
+    print(f"Knapsack -- Truck count: {len(warehouse.trucks)}")
+
     solution = np.zeros((warehouse.num_boxes(), truck.capacity), dtype=Truck)
     boxes = warehouse.to_list()
 
