@@ -2,7 +2,7 @@
 
 ![Main Executable](https://github.com/willtraweek/KnapsackAnalysis/workflows/Main%20Executable/badge.svg)
 
-![Video Runthrough](https://www.loom.com/share/e21257f99cec4e9cb7b3073f4a24546a)
+[Video Runthrough](https://www.loom.com/share/e21257f99cec4e9cb7b3073f4a24546a)
 
 We had to choose an algorithm to study and write a program to examine a trivial and non-trivial solution to the problem.  I chose the Knapsack problem, as I was interested in its uses for stock portfolio creation and awed by how quickly the difficulty scales.
 
