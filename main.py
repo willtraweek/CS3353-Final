@@ -94,5 +94,26 @@ def graph_algorithms(x, names, *args, **kwargs):
         plt.show()
 
 
+def save_to_csv(x, names, *args, **kwargs):
+    """This saves the values we found to CSV for further analysis"""
+    output = open("./output.csv", "w+")
+
+    # create header
+    output.write(f"X,")
+    for kwarg in kwargs.values():
+        for i in range(len(names)):
+            output.write(f"{names[i]} {kwarg},")
+    output.write("\n")
+
+    # create rest of table
+    for i in range(len(args[0][0])):
+        output.write(f"{x[i]},")
+        for k in range(len(args[0])):
+            for j in range(len(args)):
+                output.write(f"{args[k][j][i]},")
+        output.write("\n")
+    output.close()
+
+
 if __name__ == "__main__":
     main()
