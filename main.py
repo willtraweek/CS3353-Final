@@ -44,5 +44,28 @@ def evaluate_algorithms(algorithm_list, algorithm_names, x_min, x_max):
     graph_algorithms(x, algorithm_names, y_value, y_time, y_value="Value", y_time="Time")
     save_to_csv(x, algorithm_names, y_value, y_time, y_value="Value", y_time="Time")
 
+
+def setup_graph(algorithm, file_num):
+    """This creates the data for us to graph
+
+    Attributes:
+        algorithm: The function that we're going to be running
+        file_num: this helps predict the size of the truck that we'll need and helps us scale to match the size of the
+            input file
+    """
+    start = time.process_time()
+    warehouse = Warehouse(f"./examples/available_boxes_{file_num}.csv")
+    original_value = warehouse.value
+    trucks = []
+    for i in range(file_num):
+        # if i % 10 == 1 or i == 0:
+        if i == 0:
+            trucks.append(Truck((file_num + 1) * 10))
+            warehouse.add_truck(trucks[-1])
+            algorithm(warehouse, trucks[-1])
+    loaded_value = original_value - warehouse.value
+
+    return loaded_value, time.process_time() - start
+
 if __name__ == "__main__":
     main()
