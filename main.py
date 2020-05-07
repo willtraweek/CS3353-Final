@@ -67,5 +67,32 @@ def setup_graph(algorithm, file_num):
 
     return loaded_value, time.process_time() - start
 
+
+def graph_algorithms(x, names, *args, **kwargs):
+    """Graphs all of the different tracked values through matplotlib
+
+    Attributes:
+        x: keeps track of the x values.  These are the iterations that the previous algorithm went through
+        names: the names (in the same order as each of the args), of each of the algorithms
+        *args: These are the lists of lists of x values as defined by kwargs
+        **kwargs: These are the names that each list will be defined by
+    """
+    labels = []
+    for kwarg in kwargs.values():
+        labels.append(kwarg)
+
+    for i in range(len(args)):
+        # graph = plt.()
+        # graph.set_xdata(args[i])
+        for j in range(len(args[i])):
+            plt.plot(x, args[i][j], label=names[j])
+
+        plt.legend()
+        plt.title(labels[i])
+
+        plt.savefig(f"./graphs/{labels[i]}")
+        plt.show()
+
+
 if __name__ == "__main__":
     main()
